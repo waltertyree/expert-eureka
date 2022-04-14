@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="gifmaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W28-oF-flv">
+                                <rect key="frame" x="162.5" y="811" width="89.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Create Gif"/>
+                                <connections>
+                                    <action selector="generateAnimatedGif:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u49-9P-6Jj"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rH-h1-zkt">
+                                <rect key="frame" x="20" y="44" width="374" height="375"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1rH-h1-zkt" secondAttribute="height" multiplier="374:375" id="4Um-y8-RKM"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zlC-tD-Nit">
+                                <rect key="frame" x="56" y="454" width="303" height="31"/>
+                                <connections>
+                                    <action selector="scrubberChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="M2D-Dt-WG4"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oI-b5-mG4">
+                                <rect key="frame" x="28" y="539" width="91.5" height="33"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start Time"/>
+                                <connections>
+                                    <action selector="startTimeMarked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LAj-pw-uhN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MM-B2-TQw">
+                                <rect key="frame" x="262" y="540" width="122" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="End Time"/>
+                                <connections>
+                                    <action selector="endTimeMarked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQi-iS-TDw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fcf-FZ-3ob">
+                                <rect key="frame" x="53" y="579" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzH-Bi-Rwy">
+                                <rect key="frame" x="302" y="579" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuJ-mc-LLA">
+                                <rect key="frame" x="187" y="492" width="41.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="PEZ-ZV-WmG">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="CnZ-3K-3YD"/>
+                                    <constraint firstAttribute="width" constant="20" id="qbk-uj-ec1"/>
+                                </constraints>
+                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0MM-B2-TQw" firstAttribute="centerY" secondItem="7oI-b5-mG4" secondAttribute="centerY" id="0DX-QG-ox5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zlC-tD-Nit" secondAttribute="trailing" constant="57" id="1eS-zO-lpt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wzH-Bi-Rwy" secondAttribute="trailing" constant="70" id="2Ly-i9-ccD"/>
+                            <constraint firstItem="W28-oF-flv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="32w-bP-PXq"/>
+                            <constraint firstItem="VuJ-mc-LLA" firstAttribute="top" secondItem="zlC-tD-Nit" secondAttribute="bottom" constant="8" symbolic="YES" id="9Gf-1e-gQt"/>
+                            <constraint firstItem="0MM-B2-TQw" firstAttribute="centerX" secondItem="wzH-Bi-Rwy" secondAttribute="centerX" id="Dpo-IR-tXz"/>
+                            <constraint firstItem="7oI-b5-mG4" firstAttribute="top" secondItem="VuJ-mc-LLA" secondAttribute="bottom" constant="26" id="FSJ-3a-pHl"/>
+                            <constraint firstItem="Fcf-FZ-3ob" firstAttribute="top" secondItem="7oI-b5-mG4" secondAttribute="bottom" constant="7" id="GaM-Pa-ZIq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="W28-oF-flv" secondAttribute="bottom" constant="20" id="I1R-b7-9pc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1rH-h1-zkt" secondAttribute="trailing" constant="20" id="KHC-jt-QjH"/>
+                            <constraint firstItem="7oI-b5-mG4" firstAttribute="centerX" secondItem="Fcf-FZ-3ob" secondAttribute="centerX" id="Kt6-yQ-GcU"/>
+                            <constraint firstItem="PEZ-ZV-WmG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OAE-UO-gRM"/>
+                            <constraint firstItem="Fcf-FZ-3ob" firstAttribute="baseline" secondItem="wzH-Bi-Rwy" secondAttribute="baseline" id="OeH-D0-rjc"/>
+                            <constraint firstItem="7oI-b5-mG4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="PaL-5j-ho5"/>
+                            <constraint firstItem="wzH-Bi-Rwy" firstAttribute="top" secondItem="0MM-B2-TQw" secondAttribute="bottom" constant="8" symbolic="YES" id="PxA-MA-19z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0MM-B2-TQw" secondAttribute="trailing" constant="30" id="Rxw-Td-0nj"/>
+                            <constraint firstItem="zlC-tD-Nit" firstAttribute="top" secondItem="1rH-h1-zkt" secondAttribute="bottom" constant="35" id="ZSg-qr-6TO"/>
+                            <constraint firstItem="1rH-h1-zkt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cBB-78-i3q"/>
+                            <constraint firstItem="VuJ-mc-LLA" firstAttribute="centerX" secondItem="zlC-tD-Nit" secondAttribute="centerX" id="eFx-18-Y2c"/>
+                            <constraint firstItem="1rH-h1-zkt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jQO-C7-wn3"/>
+                            <constraint firstItem="zlC-tD-Nit" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="p7C-Ct-CCl"/>
+                            <constraint firstItem="PEZ-ZV-WmG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="w0C-yL-CQJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="createGIFButton" destination="W28-oF-flv" id="XNv-gU-iP3"/>
+                        <outlet property="currentTimeLabel" destination="VuJ-mc-LLA" id="PNt-Im-f7o"/>
+                        <outlet property="endTimeLabel" destination="wzH-Bi-Rwy" id="18G-vO-n8l"/>
+                        <outlet property="markEndButton" destination="0MM-B2-TQw" id="28q-ft-eVM"/>
+                        <outlet property="markStartButton" destination="7oI-b5-mG4" id="yrr-kP-plZ"/>
+                        <outlet property="playerView" destination="1rH-h1-zkt" id="zPQ-wx-fDN"/>
+                        <outlet property="spinner" destination="PEZ-ZV-WmG" id="lfu-fi-KPg"/>
+                        <outlet property="startTimeLabel" destination="Fcf-FZ-3ob" id="z9h-z8-uKB"/>
+                        <outlet property="timeScrubber" destination="zlC-tD-Nit" id="q7J-dC-cfZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="69.642857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
